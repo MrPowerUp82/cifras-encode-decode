@@ -1,13 +1,14 @@
-carac="abcdefghijklmnopqrstuvwxyz" 
+carac="abcdefghijklmnopqrstuvwxyz"
+carac+=carac.upper()
 decodee="-"+carac
 encodee="-"+carac[::-1] 
-entrada=str(input("->")).replace(" ", "-")
+entrada=str(input("->")).replace(" ", "--")
 result=[] 
 for l in entrada: 
     if l in decodee:
         inde=decodee.index(l)
         result.append(encodee[inde])
 
-result=str(result).replace("[","").replace("]","").replace("'","").replace(",","").replace(" ","").replace("-"," ") 
+result=''.join(result).replace('--',' ')
 print(result)
-input("press Enter to exit")
+input("\nPress any key to exit!\n")
